@@ -2,7 +2,7 @@
 **Documentation for this project created by Claude Sonnet 4.5**
 
 ![Med-RAG UI Question](assets/med-rag-q.png)
-![Med-RAG UI Answer](assets/med-rag-a.png)
+![Med-RAG UI Answer](assets/med-rag-a-mistral-7b.png)
 
 ## Overview
 Med-RAG is a lightweight, fully explainable Retrieval-Augmented Generation (RAG) system that answers clinical and research questions grounded in PubMed abstracts.

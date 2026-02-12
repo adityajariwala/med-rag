@@ -1,8 +1,14 @@
 from sentence_transformers import SentenceTransformer
 import logging
 import numpy as np
+import warnings
 
 logger = logging.getLogger(__name__)
+
+# Suppress the semaphore leak warning from sentence-transformers/loky
+# This is a known issue with multiprocessing pools not being cleaned up properly
+# See: https://github.com/UKPLab/sentence-transformers/issues/1318
+warnings.filterwarnings("ignore", message=".*leaked semaphore.*")
 
 
 class Embedder:
@@ -38,7 +44,12 @@ class Embedder:
 
         try:
             logger.info(f"Embedding {len(texts)} texts...")
-            embeddings = self.model.encode(texts, show_progress_bar=show_progress)
+            # Use convert_to_numpy=True to avoid tensor conversion issues
+            embeddings = self.model.encode(
+                texts,
+                show_progress_bar=show_progress,
+                convert_to_numpy=True
+            )
             logger.info(f"Embedding complete. Shape: {embeddings.shape}")
             return embeddings
         except Exception as e:

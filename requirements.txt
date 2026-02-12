@@ -1,0 +1,14 @@
+faiss-cpu
+sentence-transformers
+ollama
+pydantic
+tqdm
+biopython
+openai
+python-dotenv
+numpy
+fastapi
+streamlit
+requests
+uvicorn
+watchdog

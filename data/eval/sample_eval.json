@@ -1,0 +1,6 @@
+[
+  {
+    "question": "Do GLP-1 agonists reduce cardiovascular risk?",
+    "ground_truth_pmids": ["12345678", "23456789"]
+  }
+]
